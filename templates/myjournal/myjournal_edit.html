@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="container">
+        <br>
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4">
+                <h2>Diario Personal - Detalle del dia</h2>
+            </div>
+            <div class="col-sm-4"></div>
+        </div>
+
+        <div class="row">
+            
+            <div class="col-12">
+                <hr>
+                <form  method="POST">{% csrf_token %}
+                    {{ form.as_p}}
+                    <hr>
+
+                    <div class="row">
+                        <div class="col-xs-6 col-md-4">
+                            <button class="btn btn-w-m btn-default" id="btn-guardar" type="submit">
+                                <i class="fa fa-check"></i>
+                                Aceptar
+                            </button>
+                        </div>
+
+                        <div class="col-xs-6 col-md-4">
+                        </div>
+
+                        <div class="col-xs-6 col-md-4">
+                            <button type="button" class="btn btn-w-m btn-warning" id="btn-cancelar" onclick="PersonalJournalList()">
+                                <i class="fa fa-times-circle"></i>
+                                Cancelar
+                            </button>
+                        </div>
+                    </div>
+                
+                </form>
+                <hr>
+            </div>
+            
+        </div>
+        
+    </div>
+
+
+    <script>
+        function PersonalJournalList() {
+            window.location.replace("/journal/personaljournallist");
+        }
+    </script>
+
+{% endblock %}

@@ -1,0 +1,53 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Tabularium </title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
+  <!-- icheck bootstrap -->
+  <link rel="stylesheet" href="{% static 'css/animate.css'%}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{% static 'css/style.css'%}">
+  
+
+</head>
+<body class="gray-bg">
+
+  <div class="middle-box text-center loginscreen animated fadeInDown">
+      <div>
+          <div>
+
+              <!--h1 class="logo-name">IN+</h1-->
+              <img src="{% static "img/logoTrihex.png" %}" alt="" width="144" height="125">
+
+          </div>
+          <h3>Bienvenido a Trihex</h3>
+
+          <form action="/login/" method="post"> {% csrf_token %}
+              <div class="form-group">
+                  <input id="input-username" name="input-username" type="text" class="form-control" placeholder="Username" required="">
+              </div>
+              <div class="form-group">
+                  <input id="input-username" name="input-password" type="password" class="form-control" placeholder="Password" required="">
+              </div>
+              <button type="submit" class="btn btn-primary block full-width m-b">Entrar</button>
+          </form>
+      </div>
+  </div>
+
+  <!-- Mainly scripts -->
+  
+  <script src="{% static 'js/jquery-3.1.1.min.js'%}"></script>
+  <script src="{% static 'js/bootstrap.min.js'%}"></script>
+
+</body>
+
+</html>
+

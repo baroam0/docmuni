@@ -1,0 +1,9 @@
+from django.contrib import admin
+
+from .models import Expediente, Estado
+
+admin.site.register(Estado)
+admin.site.register(Expediente)
+
+
+# Register your models here.

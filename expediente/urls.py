@@ -16,11 +16,19 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from .views import expedienteedit, expedientelist, expedientenew
+from .views import certificadoedit, certificadolist, certificadonew, \
+    expedienteedit, expedientelist, expedientenew, obralist, obranew, \
+    obraedit
 
 
 urlpatterns = [
+    path('certificadoedit/<int:pk>', certificadoedit),
+    path('certificadolist', certificadolist),
+    path('certificadonew', certificadonew),
     path('expedienteedit/<int:pk>', expedienteedit),
     path('expedientelist', expedientelist),
     path('expedientenew', expedientenew),
+    path('obraedit/<int:pk>', obraedit),
+    path('obralist', obralist),
+    path('obranew', obranew),
 ]
